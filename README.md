@@ -7,12 +7,12 @@ A complete, professional implementation of a **Lakehouse architecture** using Da
 ## 📂 Project Structure
 ```
 datawithbaraa_databricks_bootcamp/
-├── bronze/              # Raw data ingestion (Delta tables)
-├── silver/              # Cleansed & standardized transformations
-│   ├── crm/             # CRM domain transformations
-│   └── erp/             # ERP domain transformations
-├── gold/                # Curated analytical models
-└── init_lakehouse/      # Initial lakehouse configurations
+├── bronze/                  # Raw data ingestion (Delta tables)
+├── silver/                  # Clean & standardized transformations
+│   ├── crm/                 # CRM domain transformations
+│   └── erp/                 # ERP domain transformations
+├── gold/                    # Curated analytical models
+└── init_lakehouse.ipynb     # Initial lakehouse configurations
 ```
 
 ---
