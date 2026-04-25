@@ -35,8 +35,7 @@ datawithbaraa_databricks_bootcamp/
 ---
 
 ## ⚙️ Lakehouse Initialization (SQL)
-```
-%sql
+```%sql
 USE CATALOG workspace;
 
 CREATE SCHEMA IF NOT EXISTS bronze
@@ -56,8 +55,7 @@ COMMENT 'Volume for raw source files (CSV)';
 ---
 
 # 1️⃣ Architecture Diagram
-```
-mermaid
+```mermaid
 flowchart TD
     A[Init Lakehouse] --> B[Bronze Layer]
 
@@ -99,21 +97,21 @@ To maximize performance, Silver and Gold transformations run in parallel, coordi
    Ingests raw CSV files into Delta tables.
 
 3. **Parallel Silver tasks**
-   - silver_crm_cust_info
-   - silver_crm_prd_info
-   - silver_crm_sales_details
-   - silver_erp_cust_act12
-   - silver_erp_loc_a101
-   - silver_erp_px_cat_g1v2
+   - ```silver_crm_cust_info```
+   - ```silver_crm_prd_info```
+   - ```silver_crm_sales_details```
+   - ```silver_erp_cust_act12```
+   - ```silver_erp_loc_a101```
+   - ```silver_erp_px_cat_g1v2```
 
 4. **silver_sanity_checks**  
    Validates that all expected Silver tables were successfully created.  
    This step ensures multiprocessing did not skip or fail silently.
 
 5. **Parallel Gold tasks**
-   - gold_dim_customers
-   - gold_dim_products
-   - gold_fact_sales
+   - ```gold_dim_customers```
+   - ```gold_dim_products```
+   - ```gold_fact_sales```
 
 6. **gold_sanity_checks**  
    Ensures all required Gold tables exist before downstream consumption.
